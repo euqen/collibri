@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+		link(rel='stylesheet' href='public/style.css')
+	body
+		.container-fluid
+			.col-md-3.col-md-offset-4
+				if error
+					.alert.alert-danger.err(align='center')=error
+				.col-sm-offset-4#reg-logo
+				#register-wrapper
+					h4(align='center') Register for free!
+					form(method='POST' action='/register')
+						input.form-control(placeholder='Login' name='login' type='text')
+						input.form-control(placeholder='E-Mail' name='email' type='e-mail')
+						input.form-control(placeholder='Password' name='password' type='password')
+						input.form-control(placeholder='Repeat password' name='passwordRepeat' type='password')
+						input.btn.btn-success.btn-sm.col-lg-5.col-md-offset-3#reg-butt(value='Register' name='submit' type='submit')
+						.clear
+				#log-in
+					span Already have an account? 
+					a(href='/') Log in

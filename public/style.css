@@ -1,0 +1,51 @@
+html, body {
+	background: #041823;
+}
+#logo {
+	background-image: url(img/ads2.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+.container-fluid {
+	height: 400px;
+}
+input {
+	margin-bottom: 10px;
+}
+#sign {
+	float: right;
+	margin: 10px;
+	font-weight: bold;
+}
+.err {
+	margin-top: 15px;
+	font-size: 11px;
+}
+#register-wrapper {
+	background-color: #FFFFFF;
+	border: 1px solid #1C1C1C;
+	border-radius: 4px;
+	padding: 15px 30px 15px 30px;
+	margin-bottom: 10px;
+}
+.clear {
+	clear:both;
+}
+#reg-butt {
+	margin-top: 15px;
+}
+#reg-logo {
+	background-image: url(img/logo.jpg);
+	margin-top: 100px;
+	width: 83px;
+	height: 87px;
+	margin-bottom: 30px;
+}
+span {
+	color: #c1c1c1;
+}
+#log-in {
+	text-align: center;
+}
