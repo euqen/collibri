@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		include ./statHead.jade
+	body
+		#bg
+			#wrapper
+				include ./menu.jade
+				h4#title Your account statistics!
+				hr
+				if (statistic != undefined)
+					#lineChart
+						canvas#fileStat(width="400" height="400")
+					#pieChart
+						canvas#storage(width="200" height="200")
+						#legend
+							#free
+								#blue
+								span Space available
+							#occupied
+								#red
+								span Space occupied
+					.clear
+					hr
+					#downloadsChart
+						canvas#globalDownload(width="400" height="400")
+				else 
+					h4#title(align="center") Ooops! You have not some file statistic yet!

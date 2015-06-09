@@ -49,3 +49,12 @@ span {
 #log-in {
 	text-align: center;
 }
+#mes {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+	color: #E8DDCB;
+	display:block;
+	text-align: center;
+}

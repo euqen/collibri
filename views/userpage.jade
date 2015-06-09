@@ -1,0 +1,67 @@
+doctype html
+html
+	head
+		link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/public/userpage.css')
+		link(rel="stylesheet" href="public/grotesque.css")
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		script(src='/public/js/jquery-ui.js')
+		script(src='/public/js/userpage.js')
+		script(src='/public/js/file.class.js')
+	body
+		#bg
+			#wrapper
+				#sidebar.sidebar
+					#user-area
+						img.img-circle.avatar(src="/public/avatars/#{avatar}" width="80" height="80")
+						a#user-label(href="" align="center" style="cursor: default")
+							if (firstname && lastname)
+								span #{firstname} #{lastname}
+							else 
+								span=login
+						#left-hr 
+							hr
+						#user-info
+							h4 User contacts:
+							if (city)
+								span.glyphicon.glyphicon-home.icon(aria-hidden="true")
+									span=city
+							if (phone)
+								span.glyphicon.glyphicon-earphone.icon(aria-hidden="true")
+									span=phone
+							if (company)
+								span.glyphicon.glyphicon-lock.icon(aria-hidden="true")
+									span=company
+							span.glyphicon.glyphicon-envelope.icon(aria-hidden="true")
+								span=email
+				#content
+					#toolbar
+						#search
+							span.glass.glyphicon.glyphicon-search(aria-hidden="true")
+							input(placeholder='If you wanna search files - do it here, buddy!')
+							.clear
+					#file-zone
+						#head
+							h4#breadcrumbs
+							input.file-upload(type="file" style="display:none" name="file-upload" multiple)
+							button.btn.btn-sm.btn-primary.btn-right.download(type="button")
+								span.glyphicon.glyphicon-cloud-download(aria-hidden="true" data="")
+								span   Download this file
+							.clear
+						hr
+						#errors
+							if (error != undefined)
+								h4.no-uploads-message=error
+						if (files != undefined)
+							#files
+								each file in files
+									.file(type="#{file.type}")
+										.file-preview
+											img.image(src="/public/img/PNG/#{file.extname}.png" width='50' height='50')
+										.file-name=file.filename
+										.file-add-time=file.times
+						else
+							h4.no-uploads-message(style="margin-left: 60px;") We are sorry, but this user didn't gave you access to his cloud.
+								hr
+							.clear
+							#files

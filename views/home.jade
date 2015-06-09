@@ -1,0 +1,129 @@
+doctype html
+html
+	head
+		link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/public/home.css')
+		link(rel="stylesheet" href="public/grotesque.css")
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		script(src='/bower_components/bootstrap/js/dropdown.js')
+		script(src='/public/js/jquery-ui.js')
+		script(src='/bower_components/bootstrap/js/alert.js')
+		script(src='/public/js/events.js')
+		script(src='/public/js/file.class.js')
+	body
+		#bg
+			#wrapper
+				#sidebar.sidebar
+					#user-area
+						img.img-circle.avatar(src="/public/avatars/#{avatar}" width=80 height=80)
+						.dropdown
+							a#user-label(data-target="#" href="#" align="center" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false")
+								if (firstname && lastname)
+									span #{firstname} #{lastname}
+								else 
+									span=login
+								span.caret
+							ul.dropdown-menu#menu(role="menu" aria-labelledby="user-label")
+								li
+									a(href="/edit") Edit profile
+								li
+									a(href="/search") Search for friends
+								li
+									a(href="/statistics") Account statistics
+								li
+									a(href="/private") Private settings
+								li
+									a(href="/logout") Log out
+						#left-hr 
+							hr
+						#friends
+							if (friends != '')
+								each friend in friends
+									.friend
+										img.img-circle(src='#{friend.avatar}' width=30 height=30)
+										if (fullname)
+											a.friend-name(href='/users/#{friend.login}')=friend.fullname
+										else 
+											a.friend-name(href='/users/#{friend.login}')=friend.login
+							else 
+								#no-friends
+									span Here will be 
+									span your friend list
+									span#user-ico.glyphicon.glyphicon-user
+					#folder-area
+						img(src="/public/img/PNG/folder.png")
+						input.form-control.input-folder(type="text" placeholder="Folder name")
+						button.btn.btn-sm.btn-warning.create-new-folder(type="button")
+							span.glyphicon.glyphicon-folder-open.padd(aria-hidden="true")
+							span Create new folder
+						.clear
+					#file-area
+						#preview
+							img(src="" width="90" height="90")
+						h5#file-name
+						button.btn.btn-sm.btn-default.btn-left#delete(type="button" data="" title="Delete file")
+							span.glyphicon.glyphicon-trash(aria-hidden="true")
+						button.btn.btn-sm.btn-default.btn-left#rename(type="button" data="" title="Rename folder")
+							span.glyphicon.glyphicon-wrench(aria-hidden="true")
+						button.btn.btn-sm.btn-primary.btn-left#downl(type="button" data="")
+							span.glyphicon.glyphicon-cloud-download(aria-hidden="true")
+							span   Download
+						#folder
+							button.btn.btn-sm.btn-primary#open-folder(type="button" data="")
+								span.glyphicon.glyphicon-folder-open(aria-hidden="true")
+								span      Open this folder
+						button.btn.btn-sm.btn-warning.general(type="button" data="")
+							span#eye-toggle.glyphicon.glyphicon-eye-open(aria-hidden="true")
+							span#eye-message
+				#storage
+					span#space-title Space available
+					progress#space(value='#{storage}' max='10000')
+					span#mb Free:  
+						=10000-storage 
+					span  MB
+				#content
+					#toolbar
+						#search
+							span.glass.glyphicon.glyphicon-search(aria-hidden="true")
+							input.search-field(placeholder='If you wanna search files - do it here, buddy!')
+							.clear
+					#file-zone
+						#head
+							h4#breadcrumbs
+							button.btn.btn-sm.btn-primary.btn-right.download(type="button")
+								span.glyphicon.glyphicon-download(aria-hidden="true")
+
+							button.btn.btn-sm.btn-primary.btn-right.new-folder(type="button")
+								span.glyphicon.glyphicon-folder-open(aria-hidden="true")
+
+							input.file-upload(type="file" style="display:none" name="file-upload" multiple)
+							button.btn.btn-sm.btn-primary.btn-right.upload(type="button")
+								span.glyphicon.glyphicon-cloud-upload(aria-hidden="true")
+								span   Upload new file
+							.clear
+						hr
+						#errors(style="display:none")
+							.alert.alert-danger.fade.in(role="alert")
+								button.close(type="button" data-dismiss="alert" aria-label="close")
+									span(aria-hidden="true") &times;
+								span#alert-message
+							if (error != undefined)
+								h4.no-uploads-message=error
+						if (files != undefined)
+							#files
+								each file in files
+									.file(type="#{file.type}")
+										.file-preview
+											img.image(src="/public/img/PNG/#{file.extname}.png" width='50' height='50')
+											.general-eye
+												if (file.general)
+													span.glyphicon.glyphicon-eye-open.eye(aria-hidden="true" title="Public file")
+												else
+													span.glyphicon.glyphicon-eye-close.eye(aria-hidden="true" title="Private file")
+										.file-name=file.filename
+										.file-add-time=file.times
+						else
+							h4.no-uploads-message We are sorry, but there are no files in your cloud yet.
+								hr
+							.clear
+							#files

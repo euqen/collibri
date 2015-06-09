@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		include ./head.jade
+	body
+		#bg
+			#wrapper
+				include ./menu.jade
+				h4#title Edit your user profile
+				hr
+				if status == 'ok'
+					.alert.alert-success(role="alert") Well done! Your user profle successfully updated!
+				if errors != undefined
+					.alert.alert-danger(role="alert")=errors
+				form.form-margin(method='POST' action='/edit' enctype="multipart/form-data")
+					#main-info
+						#ava
+							img.img-circle.avatar(src="/public/avatars/#{user.avatar}" width=95 height=95)
+							span.glyphicon.glyphicon-cog.cog(aria-hidden="true")
+						input.form-control.file(name='avatar', type="file")
+						input.form-control(placeholder='First name' name='firstname' type='text' value=user.firstname ? user.firstname : '' )
+						input.form-control(placeholder='Last name' name='lastname' type='text' value=user.lastname ? user.lastname : '')
+						hr
+					#secondary
+						input.form-control(placeholder='Company' name='company' type='text' value=user.company ? user.company : '')
+						input.form-control(placeholder='City' name='city' type='text' value=user.city ? user.city : '')
+						input.form-control(placeholder='Phone' name='phone' type='text' value=user.phone ? user.phone : '')
+						input.form-control(placeholder='E-Mail' name='email' type='text' value=user.email ? user.email : '')
+						input.btn.btn-success.btn-sm.col-lg-5.col-md-offset-3#reg-butt(value='Update profile' name='submit' type='submit')
+					.clear

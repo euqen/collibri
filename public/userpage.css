@@ -1,0 +1,342 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	background: #57707e;
+	background: -moz-linear-gradient(top,  #57707e 0%, #234a62 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#57707e), color-stop(100%,#234a62));
+	background: -webkit-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: -o-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: -ms-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: linear-gradient(to bottom,  #57707e 0%, #234a62 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57707e', endColorstr='#234a62',GradientType=0 );
+	width: 100%;
+	height: 100%;
+	background-attachment:fixed;
+}
+#wrapper {
+	background: url('/public/img/bg.png');
+	margin: 0 auto;
+	width: 1050px;
+	min-height: 600px;
+	height: auto;
+	margin-top: 50px;
+	overflow: hidden;
+}
+#sidebar {
+	float:left;
+	background: #354052;
+	width: 180px;
+	overflow: hidden;
+	min-height: 600px;
+	position: relative;
+}
+#content {
+	float:left;
+	width: 870px;
+	height: 100%;
+}
+#toolbar {
+	height:50px;
+	width:100%;
+	border-bottom: 2px solid #e7e9eb;
+}
+#search input {
+	height:47px;
+	border:0px solid #FFF;
+	width:830px;
+	padding: 10px;
+	font-weight: bold;
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	color: #4e4e4e;
+}
+#search input:focus {
+	outline: none;
+}
+#user-name, .avatar {
+	color: #abb3c1;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+#user-area {
+	width: 180px;
+	  min-height: 600px;
+	position: relative;
+}
+.grid, .list, .glass {
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	margin-top:6px;
+	margin-left: 6px;
+	float:left;
+}
+.glass {
+	color: #838383;
+	font-size: 23px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+.grid {
+	background-image: url(img/grid.png);
+	opacity: 0.6;
+	margin-top:12px;
+	cursor: pointer;
+}
+.list{
+	background-image: url(img/list.png);
+	opacity: 0.6;
+	margin-top:12px;
+	cursor: pointer;
+}
+#collection {
+	float: left;
+}
+#search {
+	float:left;
+}
+.clear {
+	clear:both;
+}
+#drop-zone {
+	width: 200px;
+	height: 220px;
+	background: #f9f9f9;
+	border: 1px dashed #c1c1c1;
+	border-radius: 5px;
+	margin: 30px;
+}
+#fill-bg {
+	background: url(img/drop.jpg);
+	width: 123px;
+	height: 176px;
+	margin-left: 35px;
+}
+#browse {
+	width: 170px;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+#infobar {
+	float:left;
+}
+#infobar canvas {
+	margin-left: 50px;
+}
+#file-zone {
+	margin: 30px;
+}
+.no-uploads {
+	background: url(img/sadfile.png);
+	background-repeat: no-repeat;
+	width: 122px;
+	height: 156px;
+	opacity: 0.5;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.no-uploads-message {
+	margin-top: 190px;
+	margin-left: 120px;
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	color: #4e4e4e;
+}
+.no-uploads-message hr {
+	margin-top:10px;
+}
+.gb {
+	position: absolute;
+	left:430px;
+	top: 422px;
+}
+.gb h3 {
+	font-weight: 600 !important;
+}
+#left-hr hr {
+	border-top: 2px solid #2D3747
+}
+.btn-right {
+	float:right;
+}
+.btn-left {
+	float:left;
+	margin-bottom: 10px;
+}
+h4 {
+	float:left;
+}
+.file-preview {
+	background: #FAFAFA;
+	width: 100px;
+	height: 80px;
+	padding-top: 15px;
+	padding-left: 25px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	position: relative;
+}
+#files {
+	margin-left: 40px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none; 
+}
+.file {
+	width: 120px;
+	height: 130px;
+	padding-left: 10px;
+	padding-top: 10px;
+	border-radius: 4px;
+	display: inline-block;
+	margin-right: 25px;
+	background-color: transparent;
+}
+.file:hover {
+	background: #E4E9EB; 
+	cursor: pointer;
+}
+.toggle{
+	background: #E4E9EB; 
+}
+.file-name {
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4e4e4e;
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+}
+.file-add-time {
+	font-size: 12px;
+	color: #ADB8BB;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#file-area #preview img {
+	margin-left: 45px;
+	margin-top:15px;
+	margin-bottom: 5px;
+}
+.create-new-folder {
+	margin-top: 25px;
+	margin-left: 22px;
+}
+.crumb {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+.btn {
+	margin-right: 5px;
+}
+#general {
+	margin-top: 10px;
+}
+#file-area {
+	margin: 10px;
+	position: relative;
+	margin-left: 180px;
+	display: none;
+	width: 180px;
+}
+#file-name {
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+}
+.input-folder {
+	width: 150px;
+	margin-left: 15px;
+}
+#file, #folder {
+	display: none;
+}
+#user-label {
+	color: #E8DDCB;
+	display: block;
+	text-align: center;
+}
+#breadcrumbs {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	color: #4e4e4e;
+}
+.avatar {
+	margin-left: 48px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #0C182B;
+}
+::-webkit-scrollbar-track {
+      background-color: #354052;;
+}
+::-webkit-scrollbar-button {
+	display:none;
+      background-color: #2D3747;
+} 
+::-webkit-scrollbar-corner {
+      background-color: #2D3747;
+}
+#user-info {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 11px;
+	color: #E8DDCB;
+	margin-left: 20px;
+}
+.icon span {
+	padding: 10px;
+}
+.icon {
+	margin-bottom: 10px;
+}
+#add-to-friends button {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 11px;
+	color: #E8DDCB;
+	position: relative;
+	margin-left: 27px;
+	margin-top:20px;
+}
+.download {
+	height: 35px;
+	display:none;
+}
+.padd {
+	margin-right: 7px;
+}
+.ui-effects-wrapper button {
+	height: 35px !important;
+	width: 150px !important;
+}
+
+#delete {
+	margin-left: 6px;
+}
+#file {
+	width: 180px;
+	margin-top: 15px;
+}

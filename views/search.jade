@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		include ./head.jade
+	body
+		#bg
+			#wrapper
+				include ./menu.jade
+				h4#title Serch for friends
+				hr
+				#search
+					input.form-control.searchfield(placeholder='Enter friends name or login here' name='search' type='text')
+					#users
+						h4#title Friends suggestions
+				#found
+					h4#title(align="center") Ooops! Nothing find yet!
+		script(src='/public/js/friends.js')

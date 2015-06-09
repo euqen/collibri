@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		include ./head.jade
+	body
+		#bg
+			#wrapper
+				include ./menu.jade
+				h4#title Edit your password
+				hr
+				if status == 'ok'
+					.alert.alert-success(role="alert") Well done! Your password successfully changed!
+				if error != undefined
+					.alert.alert-danger(role="alert") #{error}
+				form.form-margin(method='POST' action='/private' )
+					#secondary
+						input.form-control(placeholder='Old password' name='password' type='password')
+						hr
+						input.form-control(placeholder='New password' name='newPassword1' type='password')
+						input.form-control(placeholder='Repeat new password' name='newPassword2' type='password')
+						input.btn.btn-success.btn-sm.col-lg-5.col-md-offset-3#reg-butt(value='Update settings' name='submit' type='submit')
+					.clear

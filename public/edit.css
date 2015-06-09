@@ -1,0 +1,239 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	background: #57707e;
+	background: -moz-linear-gradient(top,  #57707e 0%, #234a62 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#57707e), color-stop(100%,#234a62));
+	background: -webkit-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: -o-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: -ms-linear-gradient(top,  #57707e 0%,#234a62 100%);
+	background: linear-gradient(to bottom,  #57707e 0%, #234a62 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57707e', endColorstr='#234a62',GradientType=0 );
+	width: 100%;
+	height: 100%;
+	background-attachment:fixed;
+}
+#wrapper {
+	background: #FFFFFF;
+	margin: 0 auto;
+	width: 1050px;
+	height: auto;
+	margin-top: 50px;
+	overflow: hidden;
+	position: static;
+	margin-bottom: 50px;
+}
+#content {
+	float:left;
+	width: 870px;
+	height: 100%;
+}
+#topbar {
+	background: #354052;
+	height: 80px;
+	width: 100%;
+}
+
+#title {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	color: #4e4e4e;
+	margin: 20px;
+	float: none;
+}
+
+#main-info, #secondary {
+	width: 340px;
+	margin: 0 auto;
+}
+
+#main-info hr {
+	margin-top: 30px;
+}
+
+.avatar {
+	float:left;
+	margin-right: 30px;
+}
+
+#main-info .form-control {
+	width: 200px;
+	margin-bottom: 15px;
+	margin-top: 20px;
+}
+
+#secondary .form-control {
+	margin-bottom: 15px;
+}
+
+.field {
+	float:right;
+	height: 80px;
+	width: auto;
+	padding: 10px;
+	font-size: 25px;
+	color: #E8DDCB;
+}
+
+.field a {
+	font-size: 13px;
+	font-weight: bold;
+	color: #E8DDCB;
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	display: block;
+}
+
+.field:hover {
+	background: #2E3848;
+	cursor: pointer;
+}
+.field a:hover {
+	text-decoration: none;
+}
+
+#logo {
+	float:left;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.field .glyphicon {
+	margin-left: 38%;
+}
+
+#slogan {
+	font-size: 14px;
+	font-weight: bold;
+	color: #E8DDCB;
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	cursor: default;
+	padding-top: 19px;
+	padding-left: 10px;
+	float:left;
+}
+
+.selected {
+	background: #2E3848;
+}
+
+.selected-ico {
+	color: #fff;
+	cursor: default;
+}
+
+.alert {
+	border-radius: 0px;
+}
+
+.avatar:hover {
+	cursor: pointer;
+}
+
+.file {
+	display: none !important;
+}
+#ava {
+	position: relative;
+}
+#ava .glyphicon {
+	position: absolute;
+	top: 35px;
+	left: 35px;
+	display: none;
+	font-size: 25px;
+	cursor: pointer;
+}
+.clear {
+	clear:both;
+}
+.logo {
+	float:left;
+}
+#search {
+	width: 700px;
+	margin: 0 auto;
+}
+#found {
+	border-top: 2px solid #D0D0D0;
+	background: #EEEEEE;
+	height: 100%;
+}
+.login, .fullname {
+	float: left;
+	margin-left: 15px;
+}
+.user {
+	padding-bottom: 8px;
+	padding-top: 8px;
+	width: 700px;
+	margin: 0 auto;
+	border-bottom: 1px solid #d0d0d0;
+}
+.add {
+	float:right;
+	margin-top: 6px;
+	color: #9b9b9b;
+}
+.login {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	color: #4e4e4e;
+	margin-top: 8px;
+	margin-right: 50px;
+}
+.fullname {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-style: italic;
+	font-size: 12px;
+	color: #9b9b9b;
+	margin-top: 8px;
+}
+#lineChart {
+	float:left;
+	margin-right: 250px;
+	margin-left: 30px;
+}
+#pieChart {
+	float:left;
+	margin-top: 80px;
+}
+#red, #blue {
+	width: 15px;
+	height: 15px;
+	float:left;
+	margin-right: 10px;
+	margin-top: 3px;
+}
+#red {
+	background: #F7464A;
+}
+#blue {
+	background: #46BFBD;
+}
+#legend {
+	margin-top: 40px;
+	margin-left: 30px;
+}
+#free span, #occupied span {
+	font-family: "brandon-grotesque","helvetica neue",sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 13px;
+	color: #4e4e4e;
+}
+#downloadsChart {
+	margin-left: 260px;
+}
+.form-margin {
+	margin-bottom: 20px;
+}
