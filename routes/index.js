@@ -1,27 +1,40 @@
-module.exports = function(app) {
+var express = require('express'),
+	user = require('../controllers/user'),
+    file = require('../controllers/file');
+	index = express.Router();
 
-	var user = require('../controllers/user');
-	var file = require('../controllers/file');
+module.exports.map = function(app) {
 
-	app.route('/').get(user.login).post(user.singin);
-	app.route('/register').get(user.register).post(user.signup);
-	app.route('/edit').get(user.edit).post(user.update);
-	app.get('/statistics', user.statistics);
-	app.route('/search').get(user.search).post(user.getUsers);
-	app.route('/private').get(user.private).post(user.updatePasswords);
-	app.get('/logout', user.logout);
-	app.post('/friendsActions', user.friendsActions);
-	app.get(/\/users\/([\w\-\_]{3,20})([\/[\w|%|\s]+]*)*$/, user.userPage);
+	index.route('/')
+		.get(user.login);
 
-	app.get(/\/home(\/[[\w|%|\s]+]*)*$/, file.home);
-	app.post('/uploadFile', file.uploadFile);
-	app.post('/createFolder', file.createFolder);
-	app.post('/deleteFile', file.deleteFile);
-	app.get('/downloadFile', file.downloadFile);
-	app.post('/general', file.general);
-	app.post('/rename', file.rename);
+	index.route('/register')
+		.get(user.register);
 
-	app.get('*', function (request, response) {
+	index.route('/edit')
+		.get(user.edit);
+
+	index.route('/statistics')
+	   .get(user.statistics);
+
+	index.route('/search')
+	   .get(user.search);
+
+	index.route('/private')
+	   .get(user.private);
+
+	index.route('/logout')
+	   .get(user.logout);
+
+	index.route(/\/users\/([\w\-\_]{3,20})([\/[\w|%|\s]+]*)*$/)
+	   .get(user.userPage);
+
+	index.route(/\/home(\/[[\w|%|\s]+]*)*$/)
+	   .get(file.home);
+
+	index.get('*', function (request, response) {
 		response.render('404');
 	});
+
+	app.use(index);
 };

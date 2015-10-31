@@ -1,11 +1,11 @@
-module.exports = function(app, express) {
+var bodyParser = require('body-parser'),
+	path = require('path'),
+    cookies = require('cookie-parser'),
+    sessions = require('express-session'),
+    busboy = require('connect-busboy'),
+	passport = require('./passport');
 
-	var bodyParser = require('body-parser');
-	var path = require('path');
-	var routes = require('../routes');
-	var cookies = require('cookie-parser');
-	var sessions = require('express-session');
-	var busboy = require('connect-busboy');
+module.exports = function(app, express) {
 
 	app.set("view engine", "jade");
 	app.use(sessions({
@@ -20,5 +20,9 @@ module.exports = function(app, express) {
 	app.use(bodyParser.json({ type: 'application/json' }));
 	app.use('/public', express.static(path.join(__dirname, '../public')));
 	app.use('/bower_components', express.static(path.join(__dirname, '../bower_components')));
-	routes(app);
-}
+
+	require('../routes/api').map(app);
+	require('../routes/index').map(app);
+	require('../routes/desktop').map(app);
+
+};

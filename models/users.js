@@ -16,7 +16,8 @@ var User = new Schema({
 	city: String,
 	company: String,
 	phone: String,
-	avatar: String
+	avatar: String,
+	token: String
 });
 
 /**
@@ -138,8 +139,19 @@ User.methods = {
 			}
 			return callback(message);
 		});
+	},
+
+	generateAccessToken: function(callback) {
+		crypto.randomBytes(48, function(err, buf) {
+			if(err){
+				callback(null);
+			}
+			else {
+				callback(buf.toString('hex'));
+			}
+		});
 	}
-}
+};
 
 
 module.exports = mongoose.model('User', User);
